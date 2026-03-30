@@ -10,8 +10,8 @@ by reaching their personal hydration goals.
 - Interactive UI to add water intake with a single tap.
 - Clean charts to track daily and weekly history.
 
-- **Framework: Flutter**
-- **Language: Dart**
+- Framework: **Flutter**
+- Language: **Dart**
 
 ## How to run 
 1. **Clone the Repository**
