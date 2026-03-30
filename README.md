@@ -1,16 +1,20 @@
 # happy_hydrant
 
-A new Flutter project.
+Happy Hydrant is designed to turn drinking water into a daily habit. 
+Using a simple UI and smart notifications that helps users maintain a healthy body 
+by reaching their personal hydration goals.
 
-## Getting Started
+## Key Features
 
-This project is a starting point for a Flutter application.
+- Calculates daily water needs based on user profiles.
+- Interactive UI to add water intake with a single tap.
+- Clean charts to track daily and weekly history.
 
-A few resources to get you started if this is your first Flutter project:
+- **Framework: Flutter**
+- **Language: Dart**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to run 
+1. **Clone the Repository**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
