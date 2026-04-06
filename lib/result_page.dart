@@ -11,6 +11,8 @@ class ResultPage extends StatelessWidget {
     /// TODO 13
     /// Calculate number of glasses
     /// One glass = 250 ml
+    int glasses = water ~/ 250;
+
 
     return Scaffold(
       body: Container(
@@ -35,18 +37,30 @@ class ResultPage extends StatelessWidget {
 
             /// TODO 14
             /// Display the water amount in ml
-
+            Text(
+              '$water ml',
+              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+            ),
             /// TODO 15
             /// Display number of glasses
-
+            Text(
+              'Equivalent to $glasses glasses (250ml each)',
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
+            ),
             /// TODO 16
             /// Display advice text
+            Text(
+              advice,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 22, fontStyle: FontStyle.italic),
+            ),
             const SizedBox(height: 40),
 
             ElevatedButton.icon(
               onPressed: () {
                 /// TODO 17
                 /// Go back to previous page using Navigator.pop()
+                Navigator.pop(context);
               },
 
               icon: const Icon(Icons.refresh),

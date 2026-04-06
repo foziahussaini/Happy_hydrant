@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:happy_hydrant/water_calculator.dart';
+import 'package:happy_hydrant/result_page.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
   @override
-  _InputPageState createState() => _InputPageState(weight: 60);
+  _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
   /// TODO 1
-  final int weight = 60;
-  _InputPageState({required int weight});
+  int weight = 60;
   /// Create a variable to store the user's weight
   /// default value should be 60
 
@@ -69,6 +70,7 @@ class _InputPageState extends State<InputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       /// TODO 2
+                      Text(weight.toString()),
                       /// Show the weight value here
                       const Text(
                         " kg",
@@ -95,16 +97,19 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                   child: Slider(
+                    value: weight.toDouble(),
                     /// TODO 3
                     /// Connect the slider value with the weight variable
                     min: 30,
                     max: 120,
-                    onChanged: (double value) {
+                    onChanged: (double newValue) {
                       /// TODO 4
                       /// Update the weight when slider changes
                       /// using setState},
-
-                    }, value: 0,
+                      setState(() {
+                        weight = newValue.toInt();
+                      });
+                    },
                   ),
                 ),
               ),
@@ -125,16 +130,27 @@ class _InputPageState extends State<InputPage> {
                     /// TODO 5
                     /// Create WaterCalculator object
                     /// pass the weight to it
+                    WaterCalculator calculator = WaterCalculator(weight: weight.toDouble());
                     /// TODO 6
                     /// Call calculateWater() and store the result
+                    int waterAmount = calculator.calculateWater();
 
                     /// TODO 7
                     /// Get advice using getAdvice()
-
+                    String advice = calculator.getAdvice(waterAmount);
                     /// TODO 8
                     /// Navigate to ResultPage
-                    /// pass water and advice values
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResultPage(
+                          water: waterAmount,
+                          advice: advice,
+                        ),
+                      ),
+                    );
                   },
+                    /// pass water and advice values
                   child: const Text(
                     "CALCULATE",
                     style: TextStyle(
